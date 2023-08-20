@@ -9,23 +9,53 @@
 </head>
 
 <body>
-    <section id="mode-selection-section">
-        <h1 id="game-title">Pokemon Card Game</h1>
-        <div class="choose-player-s1">
+    <section id="mode-selection-section" class="s1-c1">
+        <h1 id="game-title" class="s1-c2">Pokemon Card Game</h1>
+        <div id="choose-player-s1" class="s1-c3">
             <h1>Game Mode</h1>
-            <div id="choose-player-s2">  
-                <h3 class="choose-player-s3"><a href="#">1. Online</a></h3>
-                <h3 class="choose-player-s3"><a href="#">2. with AI</a></h3>
+            <div id="choose-player-s2" class="s1-c4">  
+                <button onclick="loadValidation()">1. Online</button>
+                <button>2. with AI</button>
+                <!-- <h3 class="choose-player-s3"><a href="#">1. Online</a></h3>
+                <h3 class="choose-player-s3"><a href="#">2. with AI</a></h3> -->
             </div>
         </div>
     </section>
-    <section id="code-generation-or-code-validation-section">
-        <div>
-            <h1>Generate Code</h1>
-            <h1>Validate code</h1>
+    <section id="Online-mode-section" class="s1-c1">
+        <h1 id="game-tile-exit" class="s1-c2">Pokemon Card Game</h1>
+        <button class="s1-c5">Exit</button>
+        <div id="online-mode-s1" class="s1-c3">
+            <h1>Online Mode</h1>
+            <div id="validate-generate" class="s1-c4">
+                <h3>Generate Code</h3>
+                <h3>Validate Code</h3>
+                <!-- <h3 class="choose-player-s3"><a href="#">1. Online</a></h3>
+                    <h3 class="choose-player-s3"><a href="#">2. with AI</a></h3> -->
+            </div>
         </div>
     </section>
+    
+    
+<script>
+        
 
+
+    document.getElementById('mode-selection-section').style.display="block";
+    document.getElementById('Online-mode-section').style.display="none";
+   function loadValidation(){
+    document.getElementById('mode-selection-section').style.display = "none";
+       document.getElementById('Online-mode-section').style.display = "block";
+   }
+    // console.log(Value1);
+    // console.log(Value2);
+
+
+
+
+       
+</script>
+    
 </body>
+
 
 </html>
