@@ -1,91 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PokeMonCard Game</title>
-    <link rel="stylesheet" href="/Game.css">
-</head>
+    <link rel="stylesheet" href="/Game.css" />
+    <script src="Game.js"></script>
+  </head>
 
-<body>
+  <body>
+    <section></section>
     <section id="mode-selection-section" class="s1-c1">
-        <h1 id="game-title" class="s1-c2">Pokemon Card Game</h1>
-        <div id="choose-player-s1" class="s1-c3">
-            <h1>Game Mode</h1>
-            <div id="choose-player-s2" class="s1-c4">  
-                <button onclick="loadValidation()">Online</button>
-                <button onclick="loadValidation2()"> With AI</button>
-                <!-- <h3 class="choose-player-s3"><a href="#">1. Online</a></h3>
+      <h1 id="game-title" class="s1-c2">Pokemon Card Game</h1>
+      <div id="choose-player-s1" class="s1-c3">
+        <h1>Game Mode</h1>
+        <div id="choose-player-s2" class="s1-c4">
+          <button onclick="loadValidation()">Online</button>
+          <button onclick="loadValidation2()">With AI</button>
+          <!-- <h3 class="choose-player-s3"><a href="#">1. Online</a></h3>
                 <h3 class="choose-player-s3"><a href="#">2. with AI</a></h3> -->
-            </div>
         </div>
+      </div>
     </section>
     <section id="Online-mode-section" class="s1-c1">
-        <div class="button-with-title">
-            <h1 id="game-tile-exit" class="s1-c2">Pokemon Card Game</h1>
-            <button onclick="exit()" class="s1-c9">Exit</button>
-        </div>
-       
-        <div id="online-mode-s1" class="s1-c3">
-            <h1>Online Mode</h1>
-            <div id="validate-generate" class="s1-c6">
-                <button type="button">Invite player</button>
-                <button type="button">join player</button>
-                <!-- <input type ="checkbox"  id ="invite_player" name="invite player" checked />
+      <div class="button-with-title">
+        <h1 id="game-tile-exit" class="s1-c2">Pokemon Card Game</h1>
+        <button onclick="exit()" class="s1-c9">Exit</button>
+      </div>
+
+      <div id="online-mode-s1" class="s1-c3">
+        <h1>Online Mode</h1>
+        <div id="validate-generate" class="s1-c6">
+          <button type="button">Invite player</button>
+          <button type="button" onclick="validationBox()">join player</button>
+          <!-- <input type ="checkbox"  id ="invite_player" name="invite player" checked />
                 <label for="invite_player"> invite player </label>  -->
-                <!-- <h3 class="choose-player-s3"><a href="#">1. Online</a></h3>
+          <!-- <h3 class="choose-player-s3"><a href="#">1. Online</a></h3>
                 <h3 class="choose-player-s3"><a href="#">2. with AI</a></h3> -->
-            </div>
         </div>
+      </div>
+    </section>
+    <section id="Online-mode-section1" class="s1-c1">
+      <div class="button-with-title">
+        <h1 id="game-tile-exit1" class="s1-c2">Pokemon Card Game</h1>
+        <button onclick="exit()" class="s1-c9">Exit</button>
+      </div>
+
+      <div id="online-mode-s11" class="s1-c3">
+        <h1>Online Mode</h1>
+        <div id="validate-generate1" class="s1-c6">
+          <button type="button">Invite player</button>
+          <button type="button">join player</button>
+          <input type="text" placeholder="Enter code" />
+          <button type="button">Join</button>
+          <!-- <input type ="checkbox"  id ="invite_player" name="invite player" checked />
+                <label for="invite_player"> invite player </label>  -->
+          <!-- <h3 class="choose-player-s3"><a href="#">1. Online</a></h3>
+                <h3 class="choose-player-s3"><a href="#">2. with AI</a></h3> -->
+        </div>
+      </div>
     </section>
 
     <section id="with-AI-section">
-            <h1 id="LEVEL-section" class="s1-c7">LEVEL</h1>
-            <div class="s1-c8"> 
-                <button type="button"> Easy   </button>
-                <button type="button"> Medium   </button>
-                <button type="button"> HARD   </button>
-                
-            </div>
+      <h1 id="LEVEL-section" class="s1-c7">LEVEL</h1>
+      <div class="s1-c8">
+        <button type="button">Easy</button>
+        <button type="button">Medium</button>
+        <button type="button">HARD</button>
+      </div>
     </section>
-    
-<script>
-        
 
+    <section id="Card-distribution-section" class="s1-c10">
+      <div class="s1-c12">
+        <h4>menu</h4>
+        <div class="s1-c11">
+          <h6></h6>
+          <h6></h6>
+          <h6></h6>
+          <h6></h6>
+          <h6></h6>
+        </div>
+        <h4>question</h4>
+      </div>
+      <div class="s1-c13">
+        <div class="s1-c14">
+          <img src="" />
+        </div>
+        <div class="s1-c15">
+          <input type="text" placeholder="Chat here..." />
+        </div>
+      </div>
+    </section>
+    <script>
+      document.getElementById("mode-selection-section").style.display = "block";
+      document.getElementById("Online-mode-section").style.display = "none";
+      document.getElementById("with-AI-section").style.display = "none";
+      document.getElementById("Online-mode-section1").style.display = "none";
+      document.getElementById("Card-distribution-section").style.display =
+        "none";
+      function loadValidation() {
+        document.getElementById("mode-selection-section").style.display =
+          "none";
+        document.getElementById("Online-mode-section").style.display = "block";
+      }
+      function loadValidation2() {
+        document.getElementById("mode-selection-section").style.display =
+          "none";
+        document.getElementById("with-AI-section").style.display = "block";
+      }
+      //    function exit(){
 
-    document.getElementById('mode-selection-section').style.display="block";
-    document.getElementById('Online-mode-section').style.display="none";
-    document.getElementById('with-AI-section').style.display="none";
-   function loadValidation(){
-    document.getElementById('mode-selection-section').style.display = "none";
-       document.getElementById('Online-mode-section').style.display = "block";
-       
-   }
-   function loadValidation2(){
-    document.getElementById('mode-selection-section').style.display = "none";
-       document.getElementById('with-AI-section').style.display = "block";
-       
-   }   
-//    function exit(){
+      //    }
+      const exit = () => {
+        document.getElementById("mode-selection-section").style.display =
+          "block";
+        document.getElementById("Online-mode-section").style.display = "none";
+        document.getElementById("with-AI-section").style.display = "none";
+      };
 
-//    }
-   const exit = ()=>{
-    document.getElementById('mode-selection-section').style.display="block";
-    document.getElementById('Online-mode-section').style.display="none";
-    document.getElementById('with-AI-section').style.display="none";
+      const validationBox = () => {
+        document.getElementById("Card-distribution-section").style.display =
+          "block";
+        document.getElementById("Online-mode-section").style.display = "none";
+      };
 
-   }
-    // console.log(Value1);
-    // console.log(Value2);
-
-
-
-
-       
-</script>
-    
-</body>
-
-
+      // console.log(Value1);
+      // console.log(Value2);
+    </script>
+  </body>
 </html>
