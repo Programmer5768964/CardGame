@@ -9,7 +9,8 @@
   </head>
 
   <body>
-    <section></section>
+    <!-- MODE SELECTION SECTION  -->
+
     <section id="mode-selection-section" class="s1-c1">
       <h1 id="game-title" class="s1-c2">Pokemon Card Game</h1>
       <div id="choose-player-s1" class="s1-c3">
@@ -22,6 +23,9 @@
         </div>
       </div>
     </section>
+
+    <!-- ONLINE MODE SECTION  -->
+
     <section id="Online-mode-section" class="s1-c1">
       <div class="button-with-title">
         <h1 id="game-tile-exit" class="s1-c2">Pokemon Card Game</h1>
@@ -41,7 +45,7 @@
       </div>
     </section>
     <section id="Online-mode-section1" class="s1-c1">
-      <div class="button-with-title">
+      <div class="button-with-title1">
         <h1 id="game-tile-exit1" class="s1-c2">Pokemon Card Game</h1>
         <button onclick="exit()" class="s1-c9">Exit</button>
       </div>
@@ -50,9 +54,7 @@
         <h1>Online Mode</h1>
         <div id="validate-generate1" class="s1-c6">
           <button type="button">Invite player</button>
-          <button type="button">join player</button>
-          <input type="text" placeholder="Enter code" />
-          <button type="button">Join</button>
+          <button type="button" onclick="validationBox()">join player</button>
           <!-- <input type ="checkbox"  id ="invite_player" name="invite player" checked />
                 <label for="invite_player"> invite player </label>  -->
           <!-- <h3 class="choose-player-s3"><a href="#">1. Online</a></h3>
@@ -60,6 +62,8 @@
         </div>
       </div>
     </section>
+
+    <!-- PLAY WITH AI SECTION  -->
 
     <section id="with-AI-section">
       <h1 id="LEVEL-section" class="s1-c7">LEVEL</h1>
@@ -69,6 +73,8 @@
         <button type="button">HARD</button>
       </div>
     </section>
+
+    <!-- CARD DISTRIBUTION SECTION  -->
 
     <section id="Card-distribution-section" class="s1-c10">
       <div class="s1-c12">
@@ -84,19 +90,55 @@
       </div>
       <div class="s1-c13">
         <div class="s1-c14">
-          <img src="" />
+          <button type="button">
+            <img src="/logo/FinalCardGameLogo.png" />
+          </button>
+          <button type="button" onclick="distributeCard()">Select Card</button>
         </div>
         <div class="s1-c15">
           <input type="text" placeholder="Chat here..." />
         </div>
       </div>
     </section>
+    <section id="Card-distribution-section1" class="s1-c10">
+      <div class="s1-c12">
+        <h4>menu</h4>
+        <div class="s1-c11">
+          <h6></h6>
+          <h6></h6>
+          <h6></h6>
+          <h6></h6>
+          <h6></h6>
+        </div>
+        <h4>question</h4>
+      </div>
+      <div class="s1-c13">
+        <div class="s1-c14">
+          <button type="button">
+            <img src="/logo/FinalCardGameLogo.png" />
+          </button>
+          <button type="button" onclick="distributeCard()">Select Card</button>
+          <div id="distributed-cards-section">
+            <img scr="/logo/FinalCardGameLogo.png" />
+          </div>
+        </div>
+        <div class="s1-c15">
+          <input type="text" placeholder="Chat here..." />
+        </div>
+      </div>
+    </section>
+
+    <!-- JAVASCRIPT  -->
+
     <script>
       document.getElementById("mode-selection-section").style.display = "block";
       document.getElementById("Online-mode-section").style.display = "none";
       document.getElementById("with-AI-section").style.display = "none";
       document.getElementById("Online-mode-section1").style.display = "none";
       document.getElementById("Card-distribution-section").style.display =
+        "none";
+
+      document.getElementById("Card-distribution-section1").style.display =
         "none";
       function loadValidation() {
         document.getElementById("mode-selection-section").style.display =
@@ -111,21 +153,27 @@
       //    function exit(){
 
       //    }
-      const exit = () => {
+      function exit() {
         document.getElementById("mode-selection-section").style.display =
           "block";
         document.getElementById("Online-mode-section").style.display = "none";
         document.getElementById("with-AI-section").style.display = "none";
-      };
+      }
 
-      const validationBox = () => {
+      function validationBox() {
         document.getElementById("Card-distribution-section").style.display =
           "block";
         document.getElementById("Online-mode-section").style.display = "none";
-      };
+      }
 
-      // console.log(Value1);
-      // console.log(Value2);
+      // CARD DISTRIBUTOR FUNCTION
+
+      function distributeCard() {
+        document.getElementById("Card-distribution-section").style.display =
+          "none";
+        document.getElementById("Card-distribution-section1").style.display =
+          "block";
+      }
     </script>
   </body>
 </html>
